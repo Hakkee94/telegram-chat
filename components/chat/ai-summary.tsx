@@ -1,6 +1,6 @@
 'use client';
 
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import {LoaderCircle, Sparkles, X} from 'lucide-react';
 import {Button} from '@/components/ui/button';
 import type {Chat} from '@/lib/chat/model';
@@ -13,13 +13,6 @@ export function AiSummaryPanel({chat}: {chat: Chat}) {
   const [open, setOpen] = useState(false);
   const [items, setItems] = useState<string[]>([]);
   const [error, setError] = useState('');
-
-  useEffect(() => {
-    setState('idle');
-    setOpen(false);
-    setItems([]);
-    setError('');
-  }, [chat.id]);
 
   if (chat.messages.length < 4) {
     return null;

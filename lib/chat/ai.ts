@@ -18,7 +18,7 @@ type ChatCompletionMessage = {
 // Собирает последние текстовые сообщения для модели: новые в приоритете,
 // лимит по количеству и по общему объёму, порядок — от старых к новым.
 export function selectRecentMessages(
-  messages: Message[],
+  messages: ReadonlyArray<Pick<Message, 'text' | 'outgoing' | 'time'>>,
   max = AI_SUMMARY_MAX_MESSAGES,
 ): TranscriptMessage[] {
   const recent = messages
