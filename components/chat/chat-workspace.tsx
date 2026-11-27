@@ -256,7 +256,7 @@ function Conversation({chat, textRef, listRef, onNewChat, ...props}: Conversatio
           <h1>{chat.name}</h1>
           <p>{chat.phone ? `+${chat.phone}` : 'Telegram'}</p>
         </div>
-        <AiSummaryPanel chat={chat} />
+        <AiSummaryPanel key={chat.id} chat={chat} />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" size="icon" className="icon-button" aria-label="Действия чата">

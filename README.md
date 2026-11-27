@@ -117,7 +117,7 @@ pnpm lint
 Запустить тесты:
 
 ```bash
-node --test tests/
+node --test "tests/*.test.mjs"
 ```
 
 Собрать production-версию:
