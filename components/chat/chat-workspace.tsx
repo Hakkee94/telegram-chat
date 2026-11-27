@@ -25,6 +25,7 @@ import {Empty, EmptyDescription, EmptyHeader, EmptyTitle} from '@/components/ui/
 import {Input} from '@/components/ui/input';
 import {TELEGRAM_MESSAGE_LENGTH} from '@/lib/chat/config';
 import type {Chat, Delivery, Message} from '@/lib/chat/model';
+import {AiSummaryPanel} from './ai-summary';
 import {ConnectionDialog} from './connection-dialog';
 
 const statusLabels: Record<Delivery, string> = {
@@ -255,6 +256,7 @@ function Conversation({chat, textRef, listRef, onNewChat, ...props}: Conversatio
           <h1>{chat.name}</h1>
           <p>{chat.phone ? `+${chat.phone}` : 'Telegram'}</p>
         </div>
+        <AiSummaryPanel chat={chat} />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" size="icon" className="icon-button" aria-label="Действия чата">
